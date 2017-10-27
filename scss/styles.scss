@@ -1,5 +1,5 @@
 ﻿@import url('https://fonts.googleapis.com/css?family=Comfortaa');
-$back-pop-up: blanchedalmond;
+$back-pop-up: lavender;
 $text-pop-up: darken(darkcyan,10%);
 
 html {
@@ -144,7 +144,7 @@ body {
     justify-content: center;
     padding-bottom: 0.05em;
     background-color: fade-out($text-pop-up,0.4);
-    border-bottom: 0.3em solid darken($back-pop-up,30%);
+    border-bottom: 0.3em solid orange;
 
     button {
         box-sizing: border-box;
