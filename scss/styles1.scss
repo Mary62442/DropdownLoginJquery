@@ -1,0 +1,156 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Comfortaa');
+$back-pop-up: blanchedalmond;
+$text-pop-up: darken(darkcyan,10%);
+
+html {
+    height: 100%;
+}
+
+
+#dark {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5);
+    display: none;
+}
+
+#button-x1, #button-x2 {
+    background-color: $back-pop-up;
+    position: absolute;
+    top: 0;
+    right: 0;
+    outline: none;
+    border: none;
+    border-top-right-radius: 0.5em;
+    cursor: pointer;
+
+    #x-icon {
+        height: 20px;
+        width: 20px;
+        position: relative;
+
+
+        &:before, &:after {
+            content: '';
+            position: absolute;
+            height: 0.3em;
+            width: 100%;
+            top: 50%;
+            left: 0;
+            transition: all 0.1s linear;
+            background: $text-pop-up;
+        }
+
+        &:before {
+            transform: rotate(45deg);
+        }
+
+        &:after {
+            transform: rotate(-45deg);
+        }
+
+        &:hover:before, &:hover:after {
+            background-color: lighten($text-pop-up,10%);
+        }
+    }
+}
+
+.form-class {
+    position: relative;
+    padding: 1em;
+    display: block;
+    background-color: $back-pop-up;
+    width: 25em;
+    text-align: center;
+    box-sizing: border-box;
+    border-radius: 0.5em;
+    margin: 0 auto;
+    color: $text-pop-up;
+
+    h2 {
+        margin: 0;
+        padding-bottom: 1em;
+    }
+
+    form {
+        font-size: 1em;
+        margin: 0 auto;
+        display: inline-block;
+        text-align: left;
+
+
+        input {
+            font-size: 1em;
+            margin-bottom: 1em;
+            font-family: 'Comfortaa', cursive;
+            outline-color: $text-pop-up;
+            box-sizing: border-box;
+        }
+
+        input[type^=text] {
+            width: 100%;
+            border-radius: 3px;
+            border: none;
+            padding: 0.4em;
+        }
+
+        input[type^=checkbox] {
+            cursor: pointer;
+        }
+
+
+        input[type^=submit] {
+            float: right;
+            margin-top: 1em;
+            background-color: $text-pop-up;
+            border: none;
+            padding: 0.7em;
+            color: $back-pop-up;
+            transition: all 0.1s linear;
+            cursor: pointer;
+
+            &:hover {
+                background-color: lighten($text-pop-up,10%);
+            }
+        }
+    }
+}
+
+#Register, #Login {
+    position: absolute;
+    margin-top: 5em;
+    left: 0;
+    right: 0;
+    display: none;
+}
+
+
+.buttons {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding-bottom: 0.05em;
+    background-color: fade-out($text-pop-up,0.4);
+    border-bottom: 0.3em solid darken($back-pop-up,30%);
+
+    button {
+        box-sizing: border-box;
+        width: 8em;
+        padding: 1em;
+        font-size: 1.3em;
+        font-family: 'Comfortaa', cursive;
+        background-color: transparent;
+        border: none;
+        color: $back-pop-up;
+        outline: none;
+        cursor: pointer;
+        transition: all 0.1s linear;
+
+        &:hover {
+            background-color: fade-out($text-pop-up,0.2);
+        }
+    }
+}
