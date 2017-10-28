@@ -1,7 +1,6 @@
 ﻿$("#reg-button").click(function () {
     $("#dark").css({ "display": "block" });
     $("#Register").slideDown(400).css({ "display": "block" });
-
 });
 
 $("#button-x1").click(function () {
