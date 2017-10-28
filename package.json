@@ -14,8 +14,7 @@
     "gulp-uglify": "^3.0.0",
     "gulp-uglifycss": "^1.0.8",
     "gulp-webserver": "^0.9.1",
-    "pump": "^1.0.2",
-    "run-sequence": "^2.2.0"
+    "pump": "^1.0.2"
   },
   "dependencies": {
     "jquery": "^3.2.1",
