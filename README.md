@@ -83,3 +83,16 @@ Install dependencies
 `$ npm install --save jquery`
 
 `$ npm install --save jquery-ui-dist`
+
+ 
+
+ES6 features and babel transpilation
+------------------------------------
+
+the following packages need to be installed to allow ES6 transpilation
+
+`$ npm install --save-dev babel-core`
+
+`$ npm install --save-dev gulp-babel`
+
+`$ npm install --save-dev babel-preset-env`

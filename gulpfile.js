@@ -1,15 +1,16 @@
-﻿var gulp = require('gulp');
+﻿let gulp = require('gulp');
 // Requires the gulp-sass plugin
-var sass = require('gulp-sass');
-var webserver = require('gulp-webserver');
-var uglify = require('gulp-uglify');
-var uglifycss = require('gulp-uglifycss');
-var pump = require('pump');
+let sass = require('gulp-sass');
+let webserver = require('gulp-webserver');
+let uglify = require('gulp-uglify');
+let uglifycss = require('gulp-uglifycss');
+//let pump = require('pump');
+let babel = require('gulp-babel');
 
 //In order for tasks to work in sequence
 //make sure the tasks return a stream or promise, or handle the callback
 
-gulp.task('uglifycss', ['sass'], function() {
+gulp.task('uglifycss', ['sass'], ()=> {
   return  gulp.src('css/**/*.css')
     .pipe(uglifycss({
       "maxLineLen": 80,
@@ -19,19 +20,19 @@ gulp.task('uglifycss', ['sass'], function() {
 });
 
 // The task that depends on uglifycss task and must be executed first
-gulp.task('sass', function() {
+gulp.task('sass', ()=> {
       return   gulp.src('scss/**/*.scss')
         .pipe(sass()) 
         .pipe(gulp.dest('css'));   
 });
 
 
-gulp.task('watch', function () {
+gulp.task('watch', ()=> {
     gulp.watch('scss/**/*.scss', ['uglifycss']);
     gulp.watch('scripts/**/*.js', ['compressjs']);
 });
  
-gulp.task('webserver', function() {
+gulp.task('webserver', ()=> {
   gulp.src('./')
     .pipe(webserver({
       livereload: true,
@@ -40,14 +41,15 @@ gulp.task('webserver', function() {
     }));
 });
 
-gulp.task('compressjs', function (cb) {
-  pump([
-        gulp.src(['scripts/*.js']),
-        uglify(),
-        gulp.dest('dist')
-    ],
-    cb
-  );
+// Javascript minification task
+gulp.task('compressjs', (cb) => {
+  return gulp.src(['scripts/*.js'])
+    .pipe(babel({
+      presets: ['env']
+    }))
+    .pipe(uglify())
+    .pipe(gulp.dest('dist'));
+    cb   
 });
 
 
