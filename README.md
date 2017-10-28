@@ -3,8 +3,25 @@ DropdownLoginJquery
 
  
 
-Steps to create this repository
--------------------------------
+Steps to run this application
+-----------------------------
+
+[Download and install node js current version and
+npm](https://nodejs.org/en/download/current/)
+
+Install gulp globally
+
+`$ npm install --global gulp-cli`
+
+`$ npm install`
+
+From inside the folder run
+
+`$ gulp`
+
+ 
+
+### Steps to indicate how this repository was created
 
 [Download Git for Windows](in)
 
@@ -33,16 +50,36 @@ dependency
 
 `$ npm install --save-dev gulp`
 
-From inside the folder install gulp sass saving it in package.json as a dev
-dependency
+Iinstall gulp sass
 
 `$ npm install --save-dev gulp-sass`
 
-From inside the folder install gulp webserver saving it in package.json as a dev
-dependency
+Install gulp webserver
 
 `$ npm install --save-dev gulp-webserver`
+
+Install gulp uglify
+
+`$ npm install --save-dev gulp-uglify`
+
+Install gulp uglifycss
+
+`$ npm install --save-dev gulp-uglifycss`
+
+Install pump
+
+`$ npm install --save-dev pump`
+
+Install runSequence
+
+`$ npm install --save-dev run-sequence`
 
 Create a gulpfile.js at the root of the project with the following code:
 
 Refer to the content of the gulpfile.js
+
+Install dependencies
+
+`$ npm install --save jquery`
+
+`$ npm install --save jquery-ui-dist`
