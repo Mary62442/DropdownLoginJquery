@@ -1,10 +1,8 @@
 ﻿let gulp = require('gulp');
-// Requires the gulp-sass plugin
 let sass = require('gulp-sass');
 let webserver = require('gulp-webserver');
 let uglify = require('gulp-uglify');
 let uglifycss = require('gulp-uglifycss');
-//let pump = require('pump');
 let babel = require('gulp-babel');
 
 //In order for tasks to work in sequence
@@ -32,7 +30,7 @@ gulp.task('watch', ()=> {
     gulp.watch('scripts/**/*.js', ['compressjs']);
 });
  
-gulp.task('webserver', ()=> {
+gulp.task('webserver', ['uglifycss', 'compressjs'], ()=> {
   gulp.src('./')
     .pipe(webserver({
       livereload: true,
@@ -53,5 +51,5 @@ gulp.task('compressjs', (cb) => {
 });
 
 
-gulp.task('default', ['uglifycss','webserver','watch', 'compressjs']);
+gulp.task('default', ['webserver','watch']);
 

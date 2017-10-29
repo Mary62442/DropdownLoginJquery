@@ -66,15 +66,7 @@ Install gulp uglifycss
 
 `$ npm install --save-dev gulp-uglifycss`
 
-Install pump
-
-`$ npm install --save-dev pump`
-
-Install runSequence
-
-`$ npm install --save-dev run-sequence`
-
-Create a gulpfile.js at the root of the project with the following code:
+Create a gulpfile.js at the root of the project 
 
 Refer to the content of the gulpfile.js
 
